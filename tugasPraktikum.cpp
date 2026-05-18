@@ -26,3 +26,16 @@ public:
 
     virtual ~RekeningBank() {}
 };
+
+// Rekening Syariah
+class RekeningSyariah : public RekeningBank
+{
+public:
+    RekeningSyariah(string nama, double s)
+        : RekeningBank(nama, s) {}
+
+    void potongAdmin()
+    {
+        cout << "Rekening Syariah bebas biaya admin." << endl;
+    }
+};
