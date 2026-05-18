@@ -74,3 +74,36 @@ public:
         }
     }
 };
+
+int main()
+{
+    RekeningBank *rekening1;
+    RekeningBank *rekening2;
+    RekeningBank *rekening3;
+
+    rekening1 = new RekeningSyariah("Nabil", 5000000);
+    rekening2 = new RekeningKonvensional("Nanda", 3000000);
+    rekening3 = new RekeningPremium("Nurul", 8000000);
+
+    cout << "=== Rekening Syariah ===" << endl;
+    rekening1->potongAdmin();
+    rekening1->tampilkanSaldo();
+
+    cout << endl;
+
+    cout << "=== Rekening Konvensional ===" << endl;
+    rekening2->potongAdmin();
+    rekening2->tampilkanSaldo();
+
+    cout << endl;
+
+    cout << "=== Rekening Premium ===" << endl;
+    rekening3->potongAdmin();
+    rekening3->tampilkanSaldo();
+
+    delete rekening1;
+    delete rekening2;
+    delete rekening3;
+
+    return 0;
+}
