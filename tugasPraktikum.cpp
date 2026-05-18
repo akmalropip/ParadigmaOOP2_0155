@@ -27,7 +27,7 @@ public:
     virtual ~RekeningBank() {}
 };
 
-// Rekening Syariah
+// Membuat Rekening Syariah
 class RekeningSyariah : public RekeningBank
 {
 public:
@@ -37,5 +37,19 @@ public:
     void potongAdmin()
     {
         cout << "Rekening Syariah bebas biaya admin." << endl;
+    }
+};
+
+// Membuat Rekening Konvensional
+class RekeningKonvensional : public RekeningBank
+{
+public:
+    RekeningKonvensional(string nama, double s)
+        : RekeningBank(nama, s) {}
+
+    void potongAdmin()
+    {
+        saldo -= 15000;
+        cout << "Biaya admin Rp 15.000 dipotong." << endl;
     }
 };
